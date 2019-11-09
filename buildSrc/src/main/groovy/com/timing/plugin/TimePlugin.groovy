@@ -14,11 +14,11 @@ class TimePlugin implements Plugin<Project> {
 ////        TimingHunterExtension timingHunterExtension = (TimingHunterExtension) project.getExtensions().getByName("timingExt");
 ////        timingHunterExtension.isDebug;
 //
-//        拿到gradle中android的Extension，将Transform注册进去
-//        def transform = new TimingHunterTransform(project)
-//        def baseExtension = project.extensions.getByType(BaseExtension.class)
-//        baseExtension.registerTransform(transform)
+        //ASM
+//        def android = project.extensions.getByType(AppExtension.class);
+//        android.registerTransform(new TimingHunterTransform(project))
+
         def android = project.extensions.getByType(AppExtension.class);
-        android.registerTransform(new TimingHunterTransform(project))
+        android.registerTransform(new JavaAssistTimingHunterTransform(project))
     }
 }

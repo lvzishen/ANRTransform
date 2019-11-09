@@ -11,10 +11,8 @@ import com.android.build.api.transform.TransformInput;
 import com.android.build.api.transform.TransformInvocation;
 import com.android.build.api.transform.TransformOutputProvider;
 import com.android.build.gradle.internal.pipeline.TransformManager;
-import com.android.ide.common.internal.WaitableExecutor;
 import com.timing.plugin.asm.BaseWeaver;
 import com.timing.plugin.asm.TimingWeaver;
-
 
 import org.apache.commons.io.FileUtils;
 import org.gradle.api.Project;
@@ -34,7 +32,7 @@ import java.util.concurrent.TimeUnit;
  * 描述:
  * 作者: lvzishen
  */
-public class TimingHunterTransform extends Transform {
+public class JavaAssistTimingHunterTransform extends Transform {
     private ThreadPoolExecutor executor;
     private final Logger logger;
     protected BaseWeaver bytecodeWeaver;
@@ -42,7 +40,7 @@ public class TimingHunterTransform extends Transform {
     private int allRunnableSize;
     private int curRunnableSize;
 
-    public TimingHunterTransform(Project project) {
+    public JavaAssistTimingHunterTransform(Project project) {
         this.logger = project.getLogger();
         this.executor = new ThreadPoolExecutor(0, Integer.MAX_VALUE, 60, TimeUnit.SECONDS, new SynchronousQueue<Runnable>());
         this.bytecodeWeaver = new TimingWeaver();

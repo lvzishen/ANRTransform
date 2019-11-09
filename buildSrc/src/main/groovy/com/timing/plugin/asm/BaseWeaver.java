@@ -123,7 +123,7 @@ public abstract class BaseWeaver implements IWeaver {
 
     @Override
     public boolean isWeavableClass(String fullQualifiedClassName) {
-        return fullQualifiedClassName.endsWith(".class") && !fullQualifiedClassName.contains("R$") && !fullQualifiedClassName.contains("R.class") && !fullQualifiedClassName.contains("BuildConfig.class");
+        return fullQualifiedClassName.endsWith(".class") && !fullQualifiedClassName.contains("R$") && !fullQualifiedClassName.contains("R.class") && !fullQualifiedClassName.contains("R2.class") && !fullQualifiedClassName.contains("R2$") && !fullQualifiedClassName.contains("BuildConfig.class");
     }
 
 }
