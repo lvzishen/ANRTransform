@@ -9,6 +9,7 @@ dependencies {
     implementation gradleApi()
     implementation localGroovy()
     implementation 'com.android.tools.build:gradle:3.4.2'
+    implementation 'commons-io:commons-io:2.6'
     implementation 'com.android.tools.build:gradle-api:3.4.2'
     //ASM相关
     implementation 'org.ow2.asm:asm:5.1'

@@ -11,7 +11,6 @@ import com.android.build.api.transform.TransformInput;
 import com.android.build.api.transform.TransformInvocation;
 import com.android.build.api.transform.TransformOutputProvider;
 import com.android.build.gradle.internal.pipeline.TransformManager;
-import com.android.ide.common.internal.WaitableExecutor;
 import com.timing.plugin.asm.BaseWeaver;
 import com.timing.plugin.asm.TimingWeaver;
 
@@ -35,9 +34,9 @@ import java.util.concurrent.TimeUnit;
  * 作者: lvzishen
  */
 public class TimingHunterTransform extends Transform {
-    private ThreadPoolExecutor executor;
     private final Logger logger;
     protected BaseWeaver bytecodeWeaver;
+    private ThreadPoolExecutor executor;
     private final Object lock = new Object();
     private int allRunnableSize;
     private int curRunnableSize;

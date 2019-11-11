@@ -4,7 +4,6 @@ import android.os.Environment;
 import android.util.Log;
 
 
-import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -81,12 +80,12 @@ public class StacktraceBlockHandler implements IBlockHandler {
         String stackTraceContent = getBlockStackTrace();
         logHugeContent(TAG, stackTraceContent);
         //如果栈中某一个方法调用时间超过3s将结果输出到本地SD卡
-        try {
-            FileUtils.writeStringToFile(new File(Environment.getExternalStorageDirectory().getPath() + "/mytestmethod.txt"), stackTraceContent);
-        } catch (IOException e) {
-            Log.i("IOException", e.getMessage());
-            e.printStackTrace();
-        }
+//        try {
+//            FileUtils.writeStringToFile(new File(Environment.getExternalStorageDirectory().getPath() + "/mytestmethod.txt"), stackTraceContent);
+//        } catch (IOException e) {
+//            Log.i("IOException", e.getMessage());
+//            e.printStackTrace();
+//        }
         return stackTraceContent;
     }
 

@@ -18,7 +18,7 @@ class TimePlugin implements Plugin<Project> {
 //        def android = project.extensions.getByType(AppExtension.class);
 //        android.registerTransform(new TimingHunterTransform(project))
 
-        def android = project.extensions.getByType(AppExtension.class);
-        android.registerTransform(new JavaAssistTimingHunterTransform(project))
+        def android = project.extensions.getByType(AppExtension.class)
+        android.registerTransform(new SensorsAnalyticsTransform(project))
     }
 }
